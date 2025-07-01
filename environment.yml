@@ -1,4 +1,4 @@
-name: er-yukiko
+name: er-distillation
 channels:
   - conda-forge
   - defaults
