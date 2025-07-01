@@ -13,8 +13,12 @@ conda env create -f environment.yml
 conda activate er-distillation
 ```
 
-### 2.  Download and organize the data
-Download the raw Magellan datasets and place them in the `data/raw` directory. Additionally, place the corresponding LLM-generated reasoning files (e.g., `train_results.jsonl`) into the  `data/reasoning` directory. 
+### 2.  Data Setup
+We use seven benchmark datasets originally from the [Magellan repository](https://github.com/anhaidgroup/deepmatcher/blob/master/Datasets.md): `amgo`, `beer`, `dbac`, `dbgo`, `foza`, `itam`, and `waam`.
+
+All required raw data is already included in the `data/raw` directory. The `train`, `valid`, and `test` splits for each dataset are based on their original distributions.
+
+The corresponding LLM-generated reasoning files (e.g., `train_results.jsonl`) were provided for this study. You should place these files into the `data/reasoning` directory to run the experiments. Please see the **Appendix** for more details on the data generation process.
 
 ### 3. Prepare the datasets
 Follow the preparation steps in the `data/preprocess.ipynb` notebook. This notebook preprocesses the raw data, integrates reasoning texts, runs the AutoML filter to identify challenging samples, and generates the final datasets (`train.csv`, `valid.csv`, `test.csv`) in the `data/prepared/` directory.
